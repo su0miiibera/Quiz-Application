@@ -1,0 +1,1364 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed,
+            #06b6d4,
+            #ec4899
+        );
+
+    background-size: 400% 400%;
+
+    animation: gradientMove 12s ease infinite;
+
+    color: #1e293b;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+/* HOME / LOGIN PAGE */
+
+.container {
+    width: 440px;
+
+    padding: 40px;
+
+    background: rgba(252, 251, 252, 0.96);
+
+    text-align: left;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(10px);
+}
+
+.container h1 {
+    text-align: center;
+
+    font-size: 34px;
+
+    color: #312e81;
+
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+}
+
+.container label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.container input,
+.container select {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    margin-bottom: 20px;
+
+    border: 2px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.container input:focus,
+.container select:focus {
+    border-color: #6366f1;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.container input::placeholder {
+    color: #94a3b8;
+}
+
+.container select {
+    cursor: pointer;
+}
+
+
+/* HOME BUTTON */
+
+.container button {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e54b46,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.container button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.35);
+}
+
+.container button:active {
+    transform: translateY(0);
+}
+
+
+/* QUIZ PAGE */
+
+.quiz-container {
+    width: 1000px;
+
+    min-height: 650px;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(30, 41, 59, 0.18);
+}
+
+
+/* QUIZ HEADER */
+
+.quiz-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.quiz-header h2 {
+    color: #312e81;
+
+    font-size: 25px;
+}
+
+.quiz-header div {
+    font-weight: 600;
+}
+
+
+/* TOTAL TIMER */
+
+.total-timer {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+#timer {
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-width: 85px;
+
+    height: 42px;
+
+    margin-left: 8px;
+
+    padding: 8px 12px;
+
+    background: #eef2ff;
+
+    color: #f80404;
+
+    border: 2px solid #c7d2fe;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* QUIZ TOP */
+
+.quiz-top {
+    position: relative;
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    min-height: 45px;
+}
+
+
+/* QUESTION NUMBER */
+
+#question-number {
+    margin-top: 10px;
+
+    color: #1264d6;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+/* QUESTION NAVIGATION */
+
+.question-navigation {
+    position: absolute;
+
+    top: -5px;
+
+    right: 0;
+
+    width: 240px;
+
+    max-height: 380px;
+
+    padding: 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    overflow-y: auto;
+
+    flex-shrink: 0;
+}
+
+.question-navigation h3 {
+    margin-bottom: 10px;
+
+    color: #334155;
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+}
+
+
+/* QUESTION NUMBERS */
+
+#question-numbers {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    column-gap: 3px;
+
+    row-gap: 3px;
+
+    justify-items: center;
+}
+
+.question-number-btn {
+    width: 38px;
+
+    height: 34px;
+
+    padding: 0;
+
+    background: white;
+
+    color: #475569;
+
+    border: 2px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.question-number-btn:hover {
+    background: #eef2ff;
+
+    color: #4338ca;
+
+    border-color: #818cf8;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* Current Question */
+
+.question-number-btn.current {
+    border-color: #4f46e5;
+
+    color: #4f46e5;
+
+    background: #eef2ff;
+}
+
+
+/* Answered Question */
+
+.question-number-btn.answered {
+    background: #4f46e5;
+
+    color: white;
+
+    border-color: #4f46e5;
+}
+
+
+/* Current + Answered */
+
+.question-number-btn.current.answered {
+    background: #7c3aed;
+
+    color: white;
+
+    border-color: #7c3aed;
+}
+
+
+/* QUESTION */
+
+#question {
+    max-width: 650px;
+    margin-bottom: 22px;
+
+    font-size: 23px;
+
+    line-height: 1.5;
+
+    color: #1e293b;
+}
+
+
+/* ANSWER OPTIONS */
+
+#options {
+    width: 100%;
+
+    max-width: 650px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.option {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 11px 16px;
+
+    background: #f8fafc;
+
+    color: #334155;
+
+    border: 2px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.option:hover {
+    background: #eef2ff;
+
+    color: #4338ca;
+
+    border-color: #818cf8;
+
+    transform: translateX(3px);
+
+    box-shadow: none;
+}
+
+.option.selected {
+    background: #4f46e5;
+
+    color: white;
+
+    border-color: #4f46e5;
+
+    transform: translateX(3px);
+}
+
+
+/* QUIZ BOTTOM BUTTONS */
+
+.quiz-buttons {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 25px;
+
+    gap: 10px;
+}
+
+.quiz-buttons button {
+    border: none;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+/* Previous */
+
+#previous-btn {
+    width: 130px;
+
+    height: 45px;
+
+    background: #a00eb4;
+
+    border-radius: 12px;
+}
+
+#previous-btn:hover {
+    background: #894993;
+
+    transform: translateY(-2px);
+}
+
+
+/* Save */
+
+#save-btn {
+    width: 110px;
+
+    height: 45px;
+
+    background: #059669;
+
+    border-radius: 12px;
+}
+
+#save-btn:hover {
+    background: #047857;
+
+    transform: translateY(-2px);
+}
+
+
+/* Next */
+
+#next-btn {
+    width: 110px;
+
+    height: 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed
+        );
+
+    border-radius: 12px;
+}
+
+#next-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Disabled */
+
+#previous-btn:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+.quiz-buttons button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* RESULT PAGE */
+
+.result-container {
+    width: 520px;
+
+    padding: 45px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(30, 41, 59, 0.20);
+}
+
+
+/* Result Heading */
+
+.result-container h1 {
+    margin-bottom: 20px;
+
+    color: #172554;
+
+    font-size: 38px;
+}
+
+
+/* Student Name */
+
+#result-name {
+    margin-bottom: 20px;
+
+    color: #312e81;
+
+    font-size: 24px;
+}
+
+
+/* SCORE CARD */
+
+.score-box {
+    margin: 25px 0;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #eef2ff
+        );
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+.score-box h2 {
+    margin-bottom: 20px;
+
+    color: #1e293b;
+
+    font-size: 30px;
+}
+
+.score-box p {
+    margin: 10px 0;
+
+    color: #334155;
+
+    font-size: 17px;
+}
+
+
+/* PERFORMANCE BAR */
+
+.performance {
+    margin-top: 25px;
+
+    text-align: left;
+}
+
+.performance-label {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+
+    height: 14px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#progress-fill {
+    width: 0%;
+
+    height: 100%;
+
+    background: #ef4444;
+
+    border-radius: 20px;
+
+    transition:
+        width 0.8s ease,
+        background 0.3s ease;
+}
+
+
+/* RESULT BUTTONS */
+
+.result-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.result-buttons button {
+    width: auto;
+
+    min-width: 140px;
+
+    padding: 12px 16px;
+
+    margin-top: 0;
+
+    border: none;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+/* View Certificate */
+
+.result-buttons button:nth-child(1) {
+    background: #4f46e5;
+}
+
+.result-buttons button:nth-child(1):hover {
+    background: #4338ca;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Restart */
+
+.result-buttons button:nth-child(2) {
+    background: #f59e0b;
+}
+
+.result-buttons button:nth-child(2):hover {
+    background: #d97706;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Back Home */
+
+.result-buttons button:nth-child(3) {
+    background: #64748b;
+}
+
+.result-buttons button:nth-child(3):hover {
+    background: #475569;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* CERTIFICATE PAGE */
+
+.certificate-page {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 40px auto;
+
+    padding: 20px;
+}
+
+
+/* CERTIFICATE */
+
+.certificate {
+    width: 100%;
+
+    min-height: 650px;
+
+    padding: 70px 80px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8faff
+        );
+
+    text-align: center;
+
+    /*
+       DOUBLE-LINE BORDER
+    */
+
+    border: 8px double #4f46e5;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 20px 50px rgba(30, 41, 59, 0.20);
+
+    position: relative;
+}
+
+/* Inner decorative line */
+
+.certificate::before {
+    content: "";
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 18px;
+
+    right: 18px;
+
+    bottom: 18px;
+
+    border: 1px solid #c7d2fe;
+
+    pointer-events: none;
+}
+
+
+/* Certificate Heading */
+
+.certificate h1 {
+    margin-bottom: 30px;
+
+    color: #312e81;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* Certificate Text */
+
+.certificate-text {
+    margin-bottom: 12px;
+
+    color: #475569;
+
+    font-size: 19px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* Student Name */
+
+.certificate h2 {
+    margin: 15px 0;
+
+    color: #111827;
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* Topic */
+
+.certificate h3 {
+    margin: 12px 0 20px;
+
+    color: #4f46e5;
+
+    font-size: 27px;
+
+    text-transform: capitalize;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* Certificate Paragraph */
+
+.certificate p {
+    margin: 12px 0;
+
+    color: #334155;
+
+    font-size: 18px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* Score */
+
+.certificate .score {
+    font-size: 30px;
+
+    color: #4f46e5;
+
+    font-weight: 700;
+}
+
+
+/* Grade */
+
+.certificate-grade {
+    font-size: 22px !important;
+
+    color: #312e81 !important;
+
+    font-weight: 600;
+}
+
+
+/* CERTIFICATE FOOTER */
+
+.certificate-footer {
+    margin-top: 45px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #94a3b8;
+
+    color: #475569;
+
+    font-size: 17px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* CERTIFICATE BUTTONS */
+
+.certificate-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.certificate-buttons button {
+    width: auto;
+
+    min-width: 160px;
+
+    height: 45px;
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+/* Print Certificate */
+
+.certificate-buttons button:nth-child(1) {
+    background: #ff0378;
+}
+
+.certificate-buttons button:nth-child(1):hover {
+    background: #d85898;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Download PDF */
+
+.certificate-buttons button:nth-child(2) {
+    background: #016143;
+}
+
+.certificate-buttons button:nth-child(2):hover {
+    background: #4f8e7c;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Back to Result */
+
+.certificate-buttons button:nth-child(3) {
+    background: #455162;
+}
+
+.certificate-buttons button:nth-child(3):hover {
+    background: #778ca8;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* CERTIFICATE PRINT */
+
+@media print {
+
+    body {
+        background: white;
+
+        display: block;
+
+        min-height: auto;
+    }
+
+    .certificate-page {
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+        padding: 0;
+    }
+
+    .certificate {
+        width: 100%;
+
+        min-height: 650px;
+
+        margin: 0;
+
+        padding: 70px 60px;
+
+        box-shadow: none;
+
+        border: 8px double #4f46e5;
+    }
+
+    .certificate-buttons {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .quiz-container {
+        width: 94%;
+
+        padding: 25px;
+    }
+
+    .question-navigation {
+        width: 210px;
+    }
+
+    #question {
+        max-width: 60%;
+    }
+
+    #options {
+        max-width: 60%;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    /* Home */
+
+    .container {
+        width: 100%;
+
+        max-width: 440px;
+
+        padding: 30px 22px;
+    }
+
+    .container h1 {
+        font-size: 29px;
+    }
+
+
+    /* Quiz */
+
+    .quiz-container {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 22px;
+
+        border-radius: 18px;
+    }
+
+    .quiz-header {
+        margin-bottom: 20px;
+    }
+
+    .quiz-header h2 {
+        font-size: 21px;
+    }
+
+    .total-timer {
+        font-size: 14px;
+    }
+
+    #timer {
+        min-width: 70px;
+
+        height: 38px;
+
+        font-size: 15px;
+    }
+
+
+    /* Quiz top */
+
+    .quiz-top {
+        min-height: 175px;
+    }
+
+    .question-navigation {
+        position: absolute;
+
+        top: 55px;
+
+        right: 0;
+
+        width: 210px;
+
+        max-height: 180px;
+    }
+
+    #question-number {
+        font-size: 15px;
+    }
+
+
+    /* Question */
+
+    #question {
+        max-width: 100%;
+
+        margin-top: 10px;
+
+        font-size: 20px;
+
+        line-height: 1.4;
+    }
+
+
+    /* Options */
+
+    #options {
+        max-width: 100%;
+    }
+
+    .option {
+        min-height: 45px;
+
+        padding: 10px 13px;
+
+        font-size: 15px;
+    }
+
+
+    /* Buttons */
+
+    .quiz-buttons {
+        gap: 7px;
+
+        margin-top: 20px;
+    }
+
+    #previous-btn,
+    #save-btn,
+    #next-btn {
+        width: 100px;
+
+        height: 42px;
+
+        font-size: 13px;
+    }
+
+
+    /* Result */
+
+    .result-container {
+        width: 100%;
+
+        max-width: 520px;
+
+        padding: 30px 20px;
+
+        border-radius: 20px;
+    }
+
+    .result-container h1 {
+        font-size: 30px;
+    }
+
+    #result-name {
+        font-size: 21px;
+    }
+
+    .score-box {
+        padding: 20px 15px;
+    }
+
+    .score-box h2 {
+        font-size: 26px;
+    }
+
+    .score-box p {
+        font-size: 15px;
+    }
+
+    .result-buttons {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .result-buttons button {
+        width: 100%;
+    }
+
+
+    /* Certificate */
+
+    .certificate-page {
+        width: 100%;
+
+        margin: 15px auto;
+
+        padding: 5px;
+    }
+
+    .certificate {
+        min-height: 560px;
+
+        padding: 45px 25px;
+
+        border-width: 6px;
+    }
+
+    .certificate::before {
+        top: 12px;
+
+        left: 12px;
+
+        right: 12px;
+
+        bottom: 12px;
+    }
+
+    .certificate h1 {
+        font-size: 28px;
+
+        margin-bottom: 25px;
+    }
+
+    .certificate h2 {
+        font-size: 27px;
+    }
+
+    .certificate h3 {
+        font-size: 21px;
+    }
+
+    .certificate-text {
+        font-size: 16px;
+    }
+
+    .certificate p {
+        font-size: 16px;
+    }
+
+    .certificate .score {
+        font-size: 26px;
+    }
+
+    .certificate-buttons {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .certificate-buttons button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Certificate</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="certificate-page">
+
+        <div class="certificate" id="certificate">
+
+            <h1>Certificate of Achievement</h1>
+
+            <p>
+                This certificate is proudly presented to
+            </p>
+
+            <h2 id="certificate-name"></h2>
+
+            <p>
+                for successfully completing the
+            </p>
+
+            <h3 id="certificate-subject"></h3>
+
+            <p>
+                Quiz
+            </p>
+
+            <p>
+                with a score of
+            </p>
+
+            <h2 id="certificate-percentage"></h2>
+
+            <p class="certificate-grade">
+
+                Grade:
+
+                <strong id="certificate-grade"></strong>
+
+            </p>
+
+            <div class="certificate-bottom">
+
+                <div>
+                    <hr>
+                    <p>Date</p>
+                    <span id="certificate-date"></span>
+                </div>
+
+                <div>
+                    <hr>
+                    <p>Quiz Application</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="certificate-buttons">
+
+            <button onclick="printCertificate()">
+                Print Certificate
+            </button>
+
+            <button onclick="downloadCertificate()">
+                Download PDF
+            </button>
+
+            <button onclick="backToResult()">
+                Back to Result
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/certificate.js"></script>
+
+</body>
+
+</html>

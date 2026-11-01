@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Application</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="quiz-container">
+
+        <!-- Header -->
+
+        <div class="quiz-header">
+
+            <h2 id="welcome"></h2>
+
+            <div class="total-timer">
+
+                Time Left:
+                <span id="timer">02:30</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Quiz Top Section -->
+
+        <div class="quiz-top">
+
+            <div>
+
+                <p id="question-number">
+                    Question 1 of 10
+                </p>
+
+            </div>
+
+
+            <!-- Question Navigator -->
+
+            <div class="question-navigation">
+
+                <h3>Questions</h3>
+
+                <div id="question-numbers"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Question -->
+
+        <h2 id="question">
+            Loading question...
+        </h2>
+
+
+        <!-- Options -->
+
+        <div id="options"></div>
+
+
+        <!-- Navigation Buttons -->
+
+        <div class="quiz-buttons">
+
+            <button
+                id="previous-btn"
+                onclick="previousQuestion()">
+
+                Previous
+
+            </button>
+
+
+            <div class="right-buttons">
+
+                <button
+                    id="save-btn"
+                    onclick="saveAnswer()">
+
+                    Save
+
+                </button>
+
+
+                <button
+                    id="next-btn"
+                    onclick="nextQuestion()">
+
+                    Next
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

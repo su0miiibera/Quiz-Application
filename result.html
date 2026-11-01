@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Result</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="result-container">
+
+        <h1>Quiz Completed!</h1>
+
+        <div class="score-box">
+
+            <h2 id="score"></h2>
+
+            <p id="correct"></p>
+
+            <p id="wrong"></p>
+
+            <p id="percentage"></p>
+
+            <p id="grade"></p>
+
+
+            <!-- Performance -->
+
+            <div class="performance">
+
+                <div class="performance-label">
+
+                    <span>Performance</span>
+
+                    <span id="performance-text">0%</span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div id="progress-fill"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Result Buttons -->
+
+        <div class="result-buttons">
+
+            <button onclick="viewCertificate()">
+                View Certificate
+            </button>
+
+            <button onclick="restartQuiz()">
+                Restart Quiz
+            </button>
+
+            <button onclick="goHome()">
+                Back to Home
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/result.js"></script>
+
+</body>
+
+</html>
